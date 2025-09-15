@@ -28,8 +28,8 @@ public class posteoController {
         return posteoService.obtenerPorId(id);
     }
     @PostMapping
-    public ResponseEntity<String> crearPosteo(@RequestBody Posteo posteo){
+    public ResponseEntity<Posteo> crearPosteo(@RequestBody Posteo posteo){
         posteoService.guardarPosteo(posteo);
-        return ResponseEntity.ok("posteo agrgado con exto");
+        return ResponseEntity.ok(posteo);
     }
 }
